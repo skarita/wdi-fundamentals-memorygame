@@ -1,9 +1,9 @@
-console.log("JS file is connected to HTML! Woo!")
-var cardOne = "queen";
-var cardTwo = "king";
-var cardThree = "queen";
-var cardFour = "king";
+// var cardOne = 'king';
+// var cardTwo = 'queen';
+// var cardThree = 'king';
+//var cardFour = 'queen';
 
+/*
 if (cardOne === cardTwo) {
 	alert("You found a match!");
 	} else {
@@ -39,3 +39,24 @@ if (cardThree === cardFour) {
 	} else {
 		alert("Sorry, try again.")
 }
+*/
+// Find and set board to a variable
+var board = document.getElementById('game-board');
+
+// function that creates board
+function createBoard() {
+	// loop through and create card elements on board
+	for (var i = 0; i < cards.length; i += 1) {
+		// Create div element to be used as cards
+		var cardElement = document.createElement('div');
+		// class of card to cardElement
+		cardElement.className = 'card';
+		// Set 'cardInfo' to card element in array
+		cardElement.setAttribute('cardInfo', cards[i])
+		// cardInfo can be King, Queen etc
+		// Append card to the board
+		board.appendChild(cardElement);
+	}
+}
+
+createBoard();
